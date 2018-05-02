@@ -4,3 +4,5 @@ C:\Users\Sussette\Documents\Visual Studio 2015\Projects\Grades\Grades.Tests\bin\
 C:\Users\Sussette\Documents\Visual Studio 2015\Projects\Grades\Grades.Tests\obj\Debug\Grades.Tests.csprojResolveAssemblyReference.cache
 C:\Users\Sussette\Documents\Visual Studio 2015\Projects\Grades\Grades.Tests\obj\Debug\Grades.Tests.dll
 C:\Users\Sussette\Documents\Visual Studio 2015\Projects\Grades\Grades.Tests\obj\Debug\Grades.Tests.pdb
+C:\Users\Sussette\Documents\Visual Studio 2015\Projects\Grades\Grades.Tests\bin\Debug\Grades.exe
+C:\Users\Sussette\Documents\Visual Studio 2015\Projects\Grades\Grades.Tests\bin\Debug\Grades.pdb
