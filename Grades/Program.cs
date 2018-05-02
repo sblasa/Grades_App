@@ -14,6 +14,8 @@ namespace Grades
 
 
             GradeBook book = new GradeBook();
+            book.Name = "Sussette's Grade Book";
+            book.Name = null;
             book.AddGrade(91);
             book.AddGrade(89.5f);
             book.AddGrade(75);
@@ -26,6 +28,7 @@ namespace Grades
             */
 
             GradeStatistics stats = book.ComputeStatistics();
+            Console.WriteLine(book.Name);
             WriteResults("Average", stats.AverageGrade);
             WriteResults("Highest Grade", (int)stats.HighestGrade);
             WriteResults("Lowest Grade", stats.LowestGrade);
