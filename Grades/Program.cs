@@ -14,11 +14,11 @@ namespace Grades
 
 
             GradeBook book = new GradeBook();
-            book.Name = "Sussette's Grade Book";
             book.Name = null;
             book.AddGrade(91);
             book.AddGrade(89.5f);
             book.AddGrade(75);
+            book.WriteGrade(Console.Out);
 
             /*
             MathStuff something = new MathStuff();
@@ -28,22 +28,21 @@ namespace Grades
             */
 
             GradeStatistics stats = book.ComputeStatistics();
-            Console.WriteLine(book.Name);
             WriteResults("Average", stats.AverageGrade);
-            WriteResults("Highest Grade", (int)stats.HighestGrade);
+            WriteResults("Highest Grade", stats.HighestGrade);
             WriteResults("Lowest Grade", stats.LowestGrade);
+            WriteResults(stats.Description, stats.LetterGrade);
 
         }
 
-        static void WriteResults(string description, int results)
+        static void WriteResults(string description, string result)
         {
-            Console.WriteLine(description + ": " + results);
+            Console.WriteLine($"{description}: {result}");
         }
 
-
-        static void WriteResults(string description, float results)
+        static void WriteResults(string description, float result)
         {
-            Console.WriteLine($"{description} : {results}");
+            Console.WriteLine($"{description} : {result:F2}");
         }
     }
 }

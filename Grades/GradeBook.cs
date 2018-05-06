@@ -1,8 +1,7 @@
 ﻿using System;
 
 using System.Collections.Generic;
-
-
+using System.IO;
 
 namespace Grades
 
@@ -15,7 +14,7 @@ namespace Grades
         public GradeBook()
 
         {
-
+            _name = "Empty 2";
             grades = new List<float>();
 
         }
@@ -50,7 +49,14 @@ namespace Grades
 
         }
 
+        public void WriteGrade(TextWriter destination)
+        {
 
+            for (int i = grades.Count; i > 0; i--)
+            {
+                destination.WriteLine(grades[i - 1]);
+            }
+        }
 
         public void AddGrade(float grade)
 
@@ -68,14 +74,30 @@ namespace Grades
 
             }
 
-            set {
-                if (!String.IsNullOrEmpty(value))
+            set
+            {
+                if (string.IsNullOrEmpty(value))
                 {
-                    _name = value;
+                    throw new ArgumentException("Name cannot be null or empty");
                 }
+
+
+                if (_name != value)
+                {
+                    NameChangedEventArgs args = new NameChangedEventArgs();
+                    args.ExistingName = _name;
+                    args.NewName = value;
+
+                    NameChanged(this, args);
+
+                }
+
+                _name = value;
+
             }
         }
 
+        public event NameChangedDelegate NameChanged;
         private string _name;
         private List<float> grades;
 
