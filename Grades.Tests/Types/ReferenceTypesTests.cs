@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Grades.Tests.Types
 {
     [TestClass]
-    public class TypesTests
+    public class TypeTests
     {
 
         [TestMethod]
@@ -27,12 +27,6 @@ namespace Grades.Tests.Types
         {
             grades[1] = 89.1f;
         }
-
-        private void AddGrades(float grades) 
-        {
-            grades[1] = 89.1f;
-
-        } 
 
         [TestMethod]
         public void UppercaseString()
